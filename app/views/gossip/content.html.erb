@@ -1,7 +1,14 @@
-<h1 style="padding-top:40px; padding-left:40px;">Le Gossip : </h1><br>
-<p style="padding-left:40px;"><strong>Titre : </strong><%= @gossip.find(params[:id]).title%></p>
-<p style="padding-left:40px;"><strong>Contenu :</strong> <%= @gossip.find(params[:id]).content%></p>
-<p style="padding-left:40px;"><strong>Autheur :</strong> <% g = @gossip.find(params[:id]) %> <% h = g.user_id %> <%= @user.find(h).first_name%> <%= @user.find(h).last_name%></p>
+<div style="background-color:pink;" class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"><strong>Le GOSSIP :</strong> <%= @gossip.find(params[:id]).title%></h1>
+    <p class="lead">Tu trouveras ci-dessous toutes les infos relatives au Gossip qui t'intéresse espèce de stalker.</p>
+  </div>
+</div>
+
+<p style="padding-left:100px;"><strong>Titre : </strong><%= @gossip.find(params[:id]).title%></p>
+<p style="padding-left:100px;"><strong>Contenu :</strong> <%= @gossip.find(params[:id]).content%></p>
+<p style="padding-left:100px;"><strong>Créé le :</strong> <%= @gossip.find(params[:id]).created_at%></p>
+<p style="padding-left:100px;"><strong>Autheur :</strong> <% g = @gossip.find(params[:id]) %> <% h = g.user_id %> <%= @user.find(h).first_name%> <%= @user.find(h).last_name%></p>
 
 
-<p style="padding-left:40px;"> <%= link_to "Lien vers l'auteur du Gossip", auteurs_path(h) %></p>
+<p style="padding-left:100px;"> <%= link_to "Lien vers l'auteur du Gossip", auteurs_path(h) %></p>
