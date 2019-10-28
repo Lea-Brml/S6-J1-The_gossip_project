@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'autheur/:id', to: 'autheur#content', as: 'auteur'
+  get 'gossip/autheur/:id', to: "autheur#content", as: "auteurs"
   get 'gossip/:id', to: 'gossip#content'
   get 'accueil/bienvenue', to: 'accueil#bienvenue'
   get 'welcome/:first_name', to: 'welcome#first_name'

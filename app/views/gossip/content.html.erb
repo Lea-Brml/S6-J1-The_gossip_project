@@ -4,4 +4,4 @@
 <p style="padding-left:40px;"><strong>Autheur :</strong> <% g = @gossip.find(params[:id]) %> <% h = g.user_id %> <%= @user.find(h).first_name%> <%= @user.find(h).last_name%></p>
 
 
-<a style ="padding-left:40px;" href="http://localhost:3000/autheur/<%@user.find(h).last_name%>"> Lien vers la page Auteur </a>
+<p style="padding-left:40px;"> <%= link_to "Lien vers l'auteur du Gossip", auteurs_path(h) %></p>
