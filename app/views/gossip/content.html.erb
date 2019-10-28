@@ -1,0 +1,7 @@
+<h1 style="padding-top:40px; padding-left:40px;">Le Gossip : </h1><br>
+<p style="padding-left:40px;"><strong>Titre : </strong><%= @gossip.find(params[:id]).title%></p>
+<p style="padding-left:40px;"><strong>Contenu :</strong> <%= @gossip.find(params[:id]).content%></p>
+<p style="padding-left:40px;"><strong>Autheur :</strong> <% g = @gossip.find(params[:id]) %> <% h = g.user_id %> <%= @user.find(h).first_name%> <%= @user.find(h).last_name%></p>
+
+
+<a style ="padding-left:40px;" href="http://localhost:3000/autheur/<%@user.find(h).last_name%>"> Lien vers la page Auteur </a>
