@@ -1,4 +1,3 @@
-
 <style>
 
   .jumbotron {
@@ -19,15 +18,20 @@
   </div>
 </div>
 
+<p style="text-align:center;">Tu souhaites créer ton propre Gossip ?  </p>
+<p style="text-align:center;">Rien de plus facile ! <a href="#">Clique donc ici.   </a></p>
+
+<br><br>
+
 <% @gossip.each do |t| %>
 
 <center>
   <div class="card" style="width: 18rem; text-align:center;">
     <img class="card-img-top" src="https://www.beyondtrust.com/assets/images/bt/whats-your-secret.jpg" alt="Card image cap">
     <div class="card-body">
-      <a class="card-title" href="http://localhost:3000/gossip/<%=t.id%>"> <%=t.title %> </a>
+      <a class="card-title" href="http://localhost:3000/gossips/<%=t.id%>"> <%=t.title %> </a>
       <p class="card-text"> <% a = t.user_id %> Gossipeur : <%= @user.find(a).first_name %></p>
-      <a class="btn btn-primary" href="http://localhost:3000/gossip/<%=t.id%>">Voir le Gossip !</a>
+      <a class="btn btn-primary" href="http://localhost:3000/gossips/<%=t.id%>">Voir le Gossip !</a>
     </div>
   </div>
   <br>

@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
 
-  get 'gossip/autheur/:id', to: "autheur#content", as: "auteurs"
-  get 'gossip/:id', to: 'gossip#content'
-  get 'accueil/bienvenue', to: 'accueil#bienvenue'
-  get 'welcome/:first_name', to: 'welcome#first_name'
-  get 'contact/contact_us'
-  get 'team/home'
+  resources :gossips
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'home#index'
+  resources :author
+
+  resources :welcome
+
+  root 'gossips#index'
+
+  get 'staticpage/contact_us', to: 'static_pages#contact_us'
+
+  get 'staticpage/home', to: 'static_pages#home'
+
+
+
 end
